@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+#Ignore datasets
+datasets/*
+
 # Distribution / packaging
 .Python
 build/

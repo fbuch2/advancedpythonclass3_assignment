@@ -1,5 +1,5 @@
 """
-Script to filter by X and count the variables
+Script to filter by the decided criteria/s and count the variables
 """
 
 import pandas as pd
@@ -42,7 +42,16 @@ class FilteringClass:
 @click.option("--tickets_sold", "-t", type=click.INT, help="Choose number of tickets sold to filter by (bigger than)")
 
 def main(input,year,genre,gross,tickets_sold):
-    """Main function"""
+    """Filter the input data witht the chosen variables"""
+    try:
+        df = pd.read_csv(input)
+
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+        raise FileNotFoundError(f"The file '{input}' does not exist.")
+    
+    
+  """Main function"""
     df = pd.read_csv(input)
     #import pdb; pdb.set_trace() #To check the names of the columns
     print(df.shape)

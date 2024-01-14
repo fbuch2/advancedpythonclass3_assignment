@@ -5,9 +5,12 @@ Script to filter by X and count the variables
 import pandas as pd
 import click
 
-def main():
+@click.command(short_help="Parser to manage inputs for a Dataset")
+@click.option("--input", "-i", required=True, help="Input Dataset")
+
+def main(input):
     """Main function"""
-    df = pd.read_csv(datasets/FilmGenreStats.csv)
+    df = pd.read_csv(input)
     print(df.shape)
 
 

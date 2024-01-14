@@ -43,13 +43,15 @@ class FilteringClass:
 
 def main(input,year,genre,gross,tickets_sold):
     """Filter the input data witht the chosen variables"""
-
     try:
         df = pd.read_csv(input)
 
     except FileNotFoundError as e:
         print(f"Error: {e}")
         raise FileNotFoundError(f"The file '{input}' does not exist.")
+    
+    
+  """Main function"""
     df = pd.read_csv(input)
     #import pdb; pdb.set_trace() #To check the names of the columns
     print(df.shape)

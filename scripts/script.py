@@ -70,8 +70,8 @@ def main(input,year,output,genre,gross,tickets_sold):
         os.makedirs(output)
     
     df.to_csv(f'{output}/filteredFilm.csv', index=None)
-    cols = len(df.axes[1])
-    print(f"There are {cols} columns with the inputed filters. You can find the document in {output}")
+    cols = len(df.axes[0])
+    print(f"There is/are {cols} line/s with the desired filters. You can find the document in {output}")
 
 if __name__ == "__main__":
     main()

@@ -26,8 +26,8 @@ class FilteringClass:
 
 @click.command(short_help="Parser to manage inputs for a Dataset")
 @click.option("--input", "-i", required=True, help="Input Dataset")
-@click.option("--year", "-y", help="Year", help="Choose year to filter by")
-@click.option("--genre", "-g", help="Genre", help="Choose genre to filter by")
+@click.option("--year", "-y", type=click.INT, help="Choose year to filter by")
+@click.option("--genre", "-g", help="Choose genre to filter by")
 
 def main(input,year,genre):
     """Main function"""

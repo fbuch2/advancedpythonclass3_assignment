@@ -18,17 +18,42 @@ class FilteringClass:
         """"
         Filter file by year
         """
-        return self.df[self.df['Year'] == year]
+        if isinstance(year, int):
+            return self.df[self.df['Year'] == year]
+        raise TypeError
     def filter_genre(self, genre):
         """"
         Filter file by genre
         """
-        return self.df[self.df['Genre'] == genre]
+        if genre in [
+            "Adventure"
+            "Action"
+            "Drama"
+            "Comedy"
+            "Thriller or Suspense"
+            "Horror"
+            "Romantic Comedy"
+            "Musical"
+            "Documentary"
+            "Dark Comedy"
+            "Western"
+            "Concert or Performance"
+            "Multiple Genres"
+            "Reality"
+            ]:
+            return self.df[self.df['Genre'] == genre]
+        raise TypeError
+    
+
     def filter_gross(self, gross):
         """"
         Filter file by gross
         """
-        return self.df[self.df['Gross'] >= gross]
+        if isinstance(gross, int):
+            return self.df[self.df['Gross'] >= gross]
+        raise TypeError
+
+        
     def filter_tickets_sold(self, tickets_sold):
         """"
         Filter file by tickets sold

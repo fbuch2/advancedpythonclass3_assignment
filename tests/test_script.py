@@ -26,7 +26,6 @@ class TestFiltering(unittest.TestCase):
         with self.assertRaises(TypeError):
             FilteringClass.filter_gross(self, self.gross)
 
-
     def test_genre(self):
         """
         Test the genre is one of the options
@@ -40,7 +39,6 @@ class TestFiltering(unittest.TestCase):
         """
         with self.assertRaises(TypeError):
             FilteringClass.filter_year(self, self.year)
-
 
 
 if __name__ == "__main__":
